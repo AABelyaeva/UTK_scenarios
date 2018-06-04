@@ -117,12 +117,22 @@
               <stringProp name="Argument.value">b2c5b5de-7162-40e3-911e-3fbec342a3b8</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
+            <elementProp name="StartDate" elementType="Argument">
+              <stringProp name="Argument.name">StartDate</stringProp>
+              <stringProp name="Argument.value">2018-04-10T00:00:00.000</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="EndDate" elementType="Argument">
+              <stringProp name="Argument.name">EndDate</stringProp>
+              <stringProp name="Argument.value">2018-04-11T00:00:00.000</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
           </collectionProp>
         </Arguments>
         <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller - Login" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
-          <boolProp name="TransactionController.parent">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="633 /" enabled="true">
@@ -256,7 +266,10 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller - open Contact section" enabled="true"/>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller - open Contact section" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1082 /0/rest/RightsService/GetCanExecuteOperations" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -1907,7 +1920,10 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Simple Controller - Open Contact" enabled="true"/>
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller - View Route" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
+        </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1030 /0/DataService/json/SyncReply/SelectQuery" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -5494,9 +5510,9 @@
             <hashTree/>
           </hashTree>
         </hashTree>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Controller - Ok" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
-          <boolProp name="TransactionController.parent">false</boolProp>
+          <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="1081 /0/rest/TsiLocationHistoryService/GetLocationHistoryData" enabled="true">
@@ -5505,7 +5521,7 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;contactId&quot;:&quot;${IdOwnerContact}&quot;,&quot;startDate&quot;:&quot;2018-04-10T00:00:00.000&quot;,&quot;endDate&quot;:&quot;2018-04-11T00:00:00.000&quot;}</stringProp>
+                  <stringProp name="Argument.value">{&quot;contactId&quot;:&quot;${IdOwnerContact}&quot;,&quot;startDate&quot;:&quot;${StartDate}&quot;,&quot;endDate&quot;:&quot;${EndDate}&quot;}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
